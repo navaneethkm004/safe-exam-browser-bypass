@@ -1,103 +1,57 @@
-<head><link rel="icon" type="image/x-icon" href="/images/favicon.ico"></head>
 <h1 id="seb-bypass-patch-v3-3-2">SEB Bypass Patch v3.3.2</h1>
-<p>By using this patch, you can use a Windows Virtual Machine [ <a href="https://www.vmware.com/go/getplayer-win">VMware Player</a>] for SEB and use your usual desktop for searching answers for the questions asked in the exams conducted in SEB without them knowing 😉 </p>
+<p>By using this patch, you can use a Windows Virtual Machine [<a href="https://www.vmware.com/go/getplayer-win">VMware Player</a>] for SEB and use your usual desktop for searching answers for the questions asked in the exams conducted in SEB without them knowing 😉</p>
 <h2 id="how-to-use">How to use</h2>
-<p>1․ Download <a href="https://github.com/navaneethkm004/safe-exam-browser-bypass/blob/main/SafeExamBrowser.Monitoring.dll?raw=true">SafeExamBrowser.Monitoring.dll</a> and <a href="https://github.com/navaneethkm004/safe-exam-browser-bypass/blob/main/SafeExamBrowser.SystemComponents.dll?raw=true">SafeExamBrowser.SystemComponents.dll</a> by clicking these. </p>
+<p>1․ Download <a href="https://github.com/navaneethkm004/safe-exam-browser-bypass/blob/main/SafeExamBrowser.Monitoring.dll?raw=true">SafeExamBrowser.Monitoring.dll</a> and <a href="https://github.com/navaneethkm004/safe-exam-browser-bypass/blob/main/SafeExamBrowser.SystemComponents.dll?raw=true">SafeExamBrowser.SystemComponents.dll</a> by clicking these.</p>
 <p>2․ Copy these two files.</p>
-<p>3․ Go to <code>C:\Program Files\SafeExamBrowser\Application</code>. </p>
+<p>3․ Go to <code>C:\Program Files\SafeExamBrowser\Application</code>.</p>
 <p>4․ Paste it in this folder.</p>
-<p>5․ You&#39;ll need <code>admin perms</code> to replace files in this folder. </p>
+<p>5․ You&#39;ll need <code>admin perms</code> to replace files in this folder.</p>
 <p>6․ After replacing, open SEB and voila it runs in a VM.</p>
 <h2 id="recommended">Recommended</h2>
 <p>It&#39;s recommended to use VMware(Free/Paid) since we can make the VM look like a real computer by copying the host computer&#39;s (the computer in which VM is running) model and company.</p>
-<p>
-  <strong>Steps to do this:</strong>
-</p>
-<p>1․ First go to the directory where you installed the Windows VM. Its the <em>Documents</em> folder by default. </p>
-<p>2․ In <em>Documents</em> folder, there will be a folder called <em>Virtual Machines</em>. </p>
+<p><strong>Steps to do this:</strong></p>
+<p>1․ First go to the directory where you installed the Windows VM. Its the <em>Documents</em> folder by default.</p>
+<p>2․ In <em>Documents</em> folder, there will be a folder called <em>Virtual Machines</em>.</p>
 <p>3․ Open that folder and select the Windows VM folder and open it.</p>
-<p>4․ Now there will be a file with extension <code>.vmx</code>. Right click that file and open with Notepad. </p>
-<p>5․ Now paste <code>smbios.reflecthost = &quot;TRUE&quot;</code> in a new line like this: </p>
-<p>
-  <img src="https://user-images.githubusercontent.com/34748927/167270852-36b89b22-bb09-4633-9040-90bc29e64f75.png" alt="image">
-</p>
+<p>4․ Now there will be a file with extension <code>.vmx</code>. Right click that file and open with Notepad.</p>
+<p>5․ Now paste <code>smbios.reflecthost = &quot;TRUE&quot;</code> in a new line like this:</p>
+<p><img src="https://user-images.githubusercontent.com/34748927/167270852-36b89b22-bb09-4633-9040-90bc29e64f75.png" alt="image"></p>
 <p>It doesn&#39;t matter where this is pasted. Just paste it in a new line.</p>
 <p>6․ Now save the file and voila! Your VM manufacturer and model is similar as your PC. This reduces the chance of VM detection.</p>
 <h1 id="don-t-forget">DON&#39;T FORGET</h1>
 <p>Don&#39;t forget to edit logs if your exam invigilator asks you for your Client and Runtime logs. </p>
-<p>Logs Path: <code>C:\Users\&lt;username&gt;\AppData\Local\SafeExamBrowser</code> and put your user name in place of <code>&lt;username&gt;</code>
-</p>
+<p>Logs Path: <code>C:\Users\&lt;username&gt;\AppData\Local\SafeExamBrowser</code> and put your user name in place of <code>&lt;username&gt;</code></p>
 <p>Just edit these parts:</p>
 <ol>
-  <li>In <strong>Runtime.log</strong> file, </li>
+<li>In <strong>Runtime.log</strong> file,</li>
 </ol>
-<pre>
-		<code>    INFO: 
-			<span class="hljs-comment">[DisplayMonitor]</span> Detected 0 active displays, 1 
-			<span class="hljs-keyword">are</span> allowed.
-
-		</code>
-	</pre>
-<p>to</p>
-<pre>
-		<code>    INFO: 
-			<span class="hljs-comment">[DisplayMonitor]</span> Detected 1 active displays, 1 
-			<span class="hljs-keyword">are</span> allowed.
-
-		</code>
-	</pre>
-<ol>
-  <li>In <strong>Client.log</strong> file, </li>
+<pre><code>    INFO: <span class="hljs-comment">[DisplayMonitor]</span> Detected 0 active displays, 1 <span class="hljs-keyword">are</span> allowed.
+</code></pre><p>to</p>
+<pre><code>    INFO: <span class="hljs-comment">[DisplayMonitor]</span> Detected 1 active displays, 1 <span class="hljs-keyword">are</span> allowed.
+</code></pre><ol>
+<li>In <strong>Client.log</strong> file,</li>
 </ol>
-<pre>
-		<code>    INFO: [WirelessAdapter] Wireless networks cannot be monitored, as there 
-			<span class="hljs-keyword">is</span>
-			<span class="hljs-literal">no</span> hardware adapter available 
-			<span class="hljs-keyword">or</span>
-			<span class="hljs-literal">it</span>
-			<span class="hljs-keyword">is</span> turned 
-			<span class="hljs-literal">off</span>.
-
-		</code>
-	</pre>
-<p>to</p>
-<pre>
-		<code>
-			<span class="hljs-symbol">INFO</span>: [
-			<span class="hljs-symbol">WirelessAdapter</span>] 
-			<span class="hljs-symbol">Started</span> monitoring the wireless network adapter.
-
-		</code>
-	</pre>
-<h2 id="follow-these-steps-if-you-re-using-v2-4-of-seb">Follow these steps if you&#39;re using v2.4 of SEB</h2>
-<p>These <code>.dll</code> files are absent in the legacy version i.e. v2.4 of SEB. </p>
+<pre><code>    INFO: [WirelessAdapter] Wireless networks cannot be monitored, as there <span class="hljs-keyword">is</span> <span class="hljs-literal">no</span> hardware adapter available <span class="hljs-keyword">or</span> <span class="hljs-literal">it</span> <span class="hljs-keyword">is</span> turned <span class="hljs-literal">off</span>.
+</code></pre><p>to</p>
+<pre><code>    <span class="hljs-symbol">INFO</span>: [<span class="hljs-symbol">WirelessAdapter</span>] <span class="hljs-symbol">Started</span> monitoring the wireless network adapter.
+</code></pre><h2 id="follow-these-steps-if-you-re-using-v2-4-of-seb">Follow these steps if you&#39;re using v2.4 of SEB</h2>
+<p>These <code>.dll</code> files are absent in the legacy version i.e. v2.4 of SEB.</p>
 <p>Basically this version of SEB doesn&#39;t check if you&#39;re using VM or not. So it&#39;s pretty easy to use it.</p>
-<p>But, if they ask for logs, you need to delete these lines from the log file[Logs Path: <code>C:\Users\&lt;username&gt;\AppData\Roaming\SafeExamBrowser</code> and put your user name in place of <code>&lt;username&gt;</code>]: </p>
+<p>But, if they ask for logs, you need to delete these lines from the log file[Logs Path: <code>C:\Users\&lt;username&gt;\AppData\Roaming\SafeExamBrowser</code>  and put your user name in place of <code>&lt;username&gt;</code>]:</p>
 <ol>
-  <li>
-    <p>Open <strong>Sebclient.log</strong>
-    </p>
-  </li>
-  <li>
-    <p>Now press Ctrl key and F key.</p>
-  </li>
-  <li>
-    <p>Now paste <code>vm3dservice</code> there and click find. </p>
-  </li>
-  <li>
-    <p>Now delete the lines where this is shown.</p>
-  </li>
-  <li>
-    <p>Do the same for <code>VGAuthService</code> and <code>vmtoolsd</code> and delete those lines. </p>
-  </li>
-  <li>
-    <p>We did this to prevent the invigilators from detecting a VM since VMware tools run these services and if they see these services, you may get disqualified. Also this only works for VMware.</p>
-  </li>
+<li><p>Open <strong>Sebclient.log</strong></p>
+</li>
+<li><p>Now press Ctrl key and F key.</p>
+</li>
+<li><p>Now paste <code>vm3dservice</code> there and click find.</p>
+</li>
+<li><p>Now delete the lines where this is shown.</p>
+</li>
+<li><p>Do the same for <code>VGAuthService</code> and <code>vmtoolsd</code> and delete those lines.</p>
+</li>
+<li><p>We did this to prevent the invigilators from detecting a VM since VMware tools run these services and if they see these services, you may get disqualified. Also this only works for VMware.</p>
+</li>
 </ol>
-<p>
-<details>
-  <summary>
-    <b>credits</b>
-  </summary>
-  <a href="https://github.com/tynkering">https://github.com/tynkering</a>
-  </p>
+<p><details>
+  <summary><b>credits</b></summary>
+  <a href="https://github.com/tynkering">https://github.com/tynkering</a></p>
