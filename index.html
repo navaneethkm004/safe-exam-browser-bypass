@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://navaneethkm004.github.io/safe-exam-browser-bypass/ -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>SEB Bypass Patch v3.3.2 | safe-exam-browser-bypass</title>
+<meta name="generator" content="Jekyll v3.9.2">
+<meta property="og:title" content="SEB Bypass Patch v3.3.2">
+<meta property="og:locale" content="en_US">
+<meta name="description" content="This is a VM detection and display detection bypass for SEB.">
+<meta property="og:description" content="This is a VM detection and display detection bypass for SEB.">
+<link rel="canonical" href="https://navaneethkm004.github.io/safe-exam-browser-bypass/">
+<meta property="og:url" content="https://navaneethkm004.github.io/safe-exam-browser-bypass/">
+<meta property="og:site_name" content="safe-exam-browser-bypass">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta property="twitter:title" content="SEB Bypass Patch v3.3.2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"This is a VM detection and display detection bypass for SEB.","headline":"SEB Bypass Patch v3.3.2","name":"safe-exam-browser-bypass","url":"https://navaneethkm004.github.io/safe-exam-browser-bypass/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link rel="preload" href="./index_files/css" as="style" type="text/css" crossorigin="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="./index_files/style.css">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<link rel="shortcut icon" type="image/x-icon" href="/index_files/favicon.ico">
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="https://navaneethkm004.github.io/safe-exam-browser-bypass/#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name">SEB Bypass Patch v3.3.2</h1>
+      <h2 class="project-tagline">This is a VM detection and display detection bypass for SEB.</h2>
+      
+        <a href="https://github.com/navaneethkm004/safe-exam-browser-bypass" class="btn">View on GitHub</a>
+      
+      
+        <a href="https://github.com/navaneethkm004/safe-exam-browser-bypass/zipball/pages" class="btn">Download .zip</a>
+        <a href="https://github.com/navaneethkm004/safe-exam-browser-bypass/tarball/pages" class="btn">Download .tar.gz</a>
+      
+    </header>
+
+    <main id="content" class="main-content" role="main">
+      
+<h1 id="seb-bypass-patch-v332">SEB Bypass Patch v3.3.2</h1>
+
+<p>By using this patch, you can use a Windows Virtual Machine [<a href="https://www.vmware.com/go/getplayer-win">VMware Player</a>] for SEB and use your usual desktop for searching answers for the questions asked in the exams conducted in SEB without them knowing 😉</p>
+
+<h2 id="how-to-use">How to use</h2>
+
+<p>1․ Download <a href="https://github.com/navaneethkm004/safe-exam-browser-bypass/blob/main/SafeExamBrowser.Monitoring.dll?raw=true">SafeExamBrowser.Monitoring.dll</a> and <a href="https://github.com/navaneethkm004/safe-exam-browser-bypass/blob/main/SafeExamBrowser.SystemComponents.dll?raw=true">SafeExamBrowser.SystemComponents.dll</a> by clicking these.</p>
+
+<p>2․ Copy these two files.</p>
+
+<p>3․ Go to <code class="language-plaintext highlighter-rouge">C:\Program Files\SafeExamBrowser\Application</code>.</p>
+
+<p>4․ Paste it in this folder.</p>
+
+<p>5․ You’ll need <code class="language-plaintext highlighter-rouge">admin perms</code> to replace files in this folder.</p>
+
+<p>6․ After replacing, open SEB and voila it runs in a VM.</p>
+<h2 id="recommended">Recommended</h2>
+
+<p>It’s recommended to use VMware(Free/Paid) since we can make the VM look like a real computer by copying the host computer’s (the computer in which VM is running) model and company.</p>
+
+<p><strong>Steps to do this:</strong></p>
+
+<p>1․ First go to the directory where you installed the Windows VM. Its the <em>Documents</em> folder by default.</p>
+
+<p>2․ In <em>Documents</em> folder, there will be a folder called <em>Virtual Machines</em>.</p>
+
+<p>3․ Open that folder and select the Windows VM folder and open it.</p>
+
+<p>4․ Now there will be a file with extension <code class="language-plaintext highlighter-rouge">.vmx</code>. Right click that file and open with Notepad.</p>
+
+<p>5․ Now paste <code class="language-plaintext highlighter-rouge">smbios.reflecthost = "TRUE"</code> in a new line like this:</p>
+
+<p><img src="./index_files/167270852-36b89b22-bb09-4633-9040-90bc29e64f75.png" alt="image"></p>
+
+<p>It doesn’t matter where this is pasted. Just paste it in a new line.</p>
+
+<p>6․ Now save the file and voila! Your VM manufacturer and model is similar as your PC. This reduces the chance of VM detection.</p>
+
+<h1 id="dont-forget">DON’T FORGET</h1>
+
+<p>Don’t forget to edit logs if your exam invigilator asks you for your Client and Runtime logs.</p>
+
+<p>Logs Path: <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;\AppData\Local\SafeExamBrowser</code> and put your user name in place of <code class="language-plaintext highlighter-rouge">&lt;username&gt;</code></p>
+
+<p>Just edit these parts:</p>
+<ol>
+  <li>
+    <p>In <strong>Runtime.log</strong> file,</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> INFO: [DisplayMonitor] Detected 0 active displays, 1 are allowed.
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>to</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    INFO: [DisplayMonitor] Detected 1 active displays, 1 are allowed.
+</code></pre></div></div>
+
+<ol>
+  <li>
+    <p>In <strong>Client.log</strong> file,</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> INFO: [WirelessAdapter] Wireless networks cannot be monitored, as there is no hardware adapter available or it is turned off.
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p>to</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    INFO: [WirelessAdapter] Started monitoring the wireless network adapter.
+</code></pre></div></div>
+
+<h2 id="follow-these-steps-if-youre-using-v24-of-seb">Follow these steps if you’re using v2.4 of SEB</h2>
+<p>These <code class="language-plaintext highlighter-rouge">.dll</code> files are absent in the legacy version i.e. v2.4 of SEB.</p>
+
+<p>Basically this version of SEB doesn’t check if you’re using VM or not. So it’s pretty easy to use it.</p>
+
+<p>But, if they ask for logs, you need to delete these lines from the log file[Logs Path: <code class="language-plaintext highlighter-rouge">C:\Users\&lt;username&gt;\AppData\Roaming\SafeExamBrowser</code>  and put your user name in place of <code class="language-plaintext highlighter-rouge">&lt;username&gt;</code>]:</p>
+
+<ol>
+  <li>
+    <p>Open <strong>Sebclient.log</strong></p>
+  </li>
+  <li>
+    <p>Now press Ctrl key and F key.</p>
+  </li>
+  <li>
+    <p>Now paste <code class="language-plaintext highlighter-rouge">vm3dservice</code> there and click find.</p>
+  </li>
+  <li>
+    <p>Now delete the lines where this is shown.</p>
+  </li>
+  <li>
+    <p>Do the same for <code class="language-plaintext highlighter-rouge">VGAuthService</code> and <code class="language-plaintext highlighter-rouge">vmtoolsd</code> and delete those lines.</p>
+  </li>
+  <li>
+    <p>We did this to prevent the invigilators from detecting a VM since VMware tools run these services and if they see these services, you may get disqualified. Also this only works for VMware.</p>
+  </li>
+</ol>
+
+<details>
+  <summary><b>credits</b></summary>
+  https://github.com/tynkering
+</details>
+
+
+      <footer class="site-footer">
+        
+          <span class="site-footer-owner"><a href="https://github.com/navaneethkm004/safe-exam-browser-bypass">safe-exam-browser-bypass</a> is maintained by <a href="https://github.com/navaneethkm004">navaneethkm004</a>.</span>
+        
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com/">GitHub Pages</a>.</span>
+      </footer>
+    </main>
+  
+
+</body></html>
